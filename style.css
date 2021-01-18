@@ -140,6 +140,7 @@ header {
 /* Table */
 #data-table {
     width: 100%;
+    overflow-x: auto;
     border-spacing: 0 0.5rem;
     color: #969cb3;
 }
@@ -149,11 +150,11 @@ table tbody td:first-child {
     border-radius: 0.5rem 0 0 0.5rem;
 }
 
-table th {
+table thead th {
     background: white;
 
     font-weight: normal;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
 
     text-align: left;
 }
@@ -166,9 +167,9 @@ table tbody tr:hover {
     opacity: 1;
 }
 
-table td {
+table tbody td {
     background: white;
-    padding: 1rem 2rem;
+    padding: 1rem 1rem;
 }
 
 td.description {
