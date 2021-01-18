@@ -1,6 +1,18 @@
 /* Global */
 :root {
+    --header-color: #2D4A22;
+    --bg-color: #f0f2f5;
+    --ball-color: #fff;
+    --ball-bg: #111;
+    --card-bg: #49AA26;
     --dark-blue: #363f5f;
+}
+.dark:root {
+    --header-color: #0D0D0F;
+    --bg-color: #151518;
+    --ball-color: #111;
+    --card-bg: #8257E6;
+    --ball-bg: #fff;
 }
 * {
     margin: 0;
@@ -9,7 +21,7 @@
 }
 
 body {
-    background: #f0f2f5;
+    background: var(--bg-color);
     font-family: 'Poppins', sans-serif;
 }
 
@@ -29,7 +41,7 @@ h2 {
 
 /* Header */
 header {
-    background: #2D4A22;
+    background: var(--header-color);
     padding: 2rem 0 12rem;
     text-align: center;
 }
@@ -37,6 +49,54 @@ header {
 #logo {
     color: #fff;
     font-weight: 100;
+}
+
+/* Dark Mode*/
+.toogle {
+    width: min(90vw, 800px);
+    margin: auto;
+    text-align: left;
+}
+
+.checkbox {
+    opacity: 0;
+    position: absolute;
+}
+
+.checkbox:checked + .label .ball {
+    transform: translateX(24px);
+}
+
+.label {
+    background-color: var(--ball-bg);
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+    display: flex;
+    padding: 5px;
+    height: 26px;
+    width: 50px;
+}
+
+.ball {
+    background-color: var(--ball-color);
+    border-radius: 50%;
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    height: 22px;
+    width: 22px;
+    transition: 0.3s ease all;
+}
+
+.fa-moon {
+    color: #f1c40f;
+}
+
+.fa-sun {
+    color: #f39c12;
 }
 
 /* Balance */
@@ -73,7 +133,7 @@ header {
 }
 
 .card.total {
-    background: #49AA26;
+    background: var(--card-bg);
     color:white;
 }
 
