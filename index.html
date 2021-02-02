@@ -7,6 +7,11 @@
     initial-scale=1.0">
     <title>dev.finance$</title>
 
+    <meta property=”og:title” content="DevFinance$" />
+    <meta property=”og:description” content="Controle suas despesas!" />
+    <meta property=”og:image” content="https://i.imgur.com/3UntPjG.png" />
+    <meta property=”og:url” content="dev-finance.souuzaaa.vercel.app" />
+
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link
@@ -31,7 +36,7 @@
         <section id="balance">
             <h2 class="sr-only">Balanço</h2>
 
-            <div class="card">
+            <div class="card income">
                 <h3>
                     <span>Entradas</span>
                     <img src="assets/income.svg" alt="Imagem de entradas">
@@ -39,7 +44,7 @@
                 <p id="income-display">R$ 0,00</p>
             </div>
 
-            <div class="card">
+            <div class="card expense">
                 <h3>
                     <span>Saídas</span>
                     <img src="assets/expense.svg" alt="Imagem de entradas">
@@ -59,7 +64,7 @@
         <section id="transaction">
             <h2 class="sr-only">Transações</h2>
 
-            <a href="#" onclick="Modal.open()" class="button new">+ Nova Transação</a>
+            <a href="#" onclick="Modal.toogle()" class="button new">+ Nova Transação</a>
 
             <table id="data-table">
                 <thead>
@@ -121,7 +126,7 @@
                     </div>
 
                     <div class="input-group actions">
-                        <a href="#" onclick="Modal.close()" class="button cancel">Cancelar</a>
+                        <a href="#" onclick="Modal.toogle()" class="button cancel">Cancelar</a>
                         <button>Salvar</button>
                     </div>
                 </form>

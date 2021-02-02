@@ -8,21 +8,12 @@ checkbox.addEventListener('change', () => {
 })
 
 // Script
-
+/* trocar as duas funções por uma função só chamada toogle (liga e desliga), se existir a classe, se a classe não existir ele adiciona.*/
 const Modal = {
-    open(){
-        // Abrir Modal
-        // Adicionar a class active ao modal
+    toogle() {
         document
             .querySelector('.modal-overlay')
-            .classList.add('active')
-    },
-    close(){
-        // Fechar Modal
-        // Remover a class active do modal
-        document
-            .querySelector('.modal-overlay')
-            .classList.remove('active')
+            .classList.toggle('active')
     }
 }
 
@@ -124,9 +115,9 @@ const DOM = {
 
 const Utils = {
     formatAmount(value) {
-        value = Number(value) * 100
+        value = value * 100
         
-        return value
+        return Math.round(value)
     },
 
     formatDate(date) {
@@ -138,6 +129,18 @@ const Utils = {
     formatCurrency(value) {
         const signal = Number(value) < 0 ? "-" : ""
 
+        if(Number(value) < 0) {
+            document
+                .querySelector('.card.total')
+                .style
+                .background = "#e92929"
+        } else {
+            document
+                .querySelector('.card.total')
+                .style
+                .background = "var(--card-bg)"
+        }
+
         value = String(value).replace(/\D/g, "")
 
         value = Number(value) / 100
@@ -146,7 +149,7 @@ const Utils = {
             style: "currency",
             currency: "BRL"
         })
-
+        console.log(value)
         return signal + value
     }
 }
@@ -206,7 +209,7 @@ const Form = {
             // apagar os dados do formulario
             Form.clearFields()
             // modal feche
-            Modal.close()
+            Modal.toogle()
         } catch (error) {
             alert(error.message)
         }

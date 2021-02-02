@@ -348,3 +348,26 @@ footer {
         gap: 2rem;
     }
 }
+
+/* Animations */
+@keyframes fade {
+    from {
+        opacity: 0.1;
+        transform: translateX(-35%);
+    } to {
+        opacity: 1;
+        transform: translateX(0%);
+    }
+}
+.card.income, .button.new {
+    animation-name: fade;
+    animation-duration: 1.5s;
+}
+.card.expense {
+    animation-name: fade;
+    animation-duration: 1.25s;
+}
+.card.total {
+    animation-name: fade;
+    animation-duration: 1s;
+}
